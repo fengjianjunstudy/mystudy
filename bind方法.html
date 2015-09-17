@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function fn1(){ 
+		console.log(this.name);
+	}
+	var obj={
+		name:"xiaoming"
+	};
+	var fn=fn1.bind(obj);
+	fn();
+	</script>
+</body>
+</html>
