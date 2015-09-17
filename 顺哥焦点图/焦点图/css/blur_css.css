@@ -1,0 +1,5 @@
+.blur_move_left{width:30px;height:50px; background:url(../images/move_left.png); position:absolute; cursor:pointer; z-index:100;}
+.blur_move_right{width:30px;height:50px; background:url(../images/move_right.png); position:absolute; cursor:pointer; z-index:100;}
+.blur_hots{position:absolute;z-index:99; margin: 0px; padding: 0px; list-style: none;}
+.blur_hots li{width:11px;height:11px; background:url(../images/hotpoint.png); float:left; margin:5px; cursor:pointer;}
+.blur_hots .blur_active{ background:url(../images/hotpointa.png);}

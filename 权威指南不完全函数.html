@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//类数组转化为数组
+		function toArray(arr,n){ 
+			return [].slice.call(arr,n||0);
+		}
+
+		function partialLeft(f){ 
+			var args=arguments;
+			return function(){ 
+				var a=toArray(args,1);
+				var allArr=a.concat(toArray(arguments));
+				return f.apply(this,allArr);
+			}
+		}
+		function partialRight(f){ 
+			var args=arguments;
+			return function(){ 
+				var a=toArray(args,1);
+				var allArr=toArray(arguments).concat(a);
+				return f.apply(this,allArr);
+			}
+		}
+		function partial(f){ 
+			var args=toArray(arguments,1);
+			return function(){ 
+				var i=0,j=0;
+				for(;i<args.length;i++){ 
+					if(typeof args[i]==="undefined"){ 
+						args[i]=arguments[j++];
+					}
+
+				}
+				var newArr=args.concat(toArray(arguments,j));
+				return f.apply(this,newArr);
+			}
+
+		}
+		function f(x,y,z){ 
+			return x*(y-z);
+		}
+		var g=partialLeft(f,2);
+		console.log(g(3,4));
+		var h=partialRight(f,2);
+		console.log(h(3,4));
+		console.log(partial(f,undefined,2)(3,4))
+	</script>
+</body>
+</html>

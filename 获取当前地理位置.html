@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">获取当前位置</button>
+    <script type="text/javascript">
+        function getMap(){
+            if(!navigator.geolocation){
+                console.log("111")
+            }
+            var image=document.createElement("img");
+
+            navigator.geolocation.getCurrentPosition(success,errorFn);
+            return image;
+            function errorFn(){
+                console.log("dd")
+            }
+            function success(pos) {
+                var crd = pos.coords;
+
+                console.log('Your current position is:');
+                console.log('Latitude : ' + crd.latitude);
+                console.log('Longitude: ' + crd.longitude);
+                console.log('More or less ' + crd.accuracy + ' meters.');
+            };
+            function setMapUrl(pos){
+                var latitude=pos.coords.latitude;
+                var longitude=pos.coords.longitude;
+                var accuracy=pos.coords.accuracy;
+                var
+                        url="http://map.google.com/maps/api/staticmap"+"?center="+latitude+","+longitude+"&size=640x640sensor=true";
+                var zoomlevel=20;
+                if(accuracy>80){
+                    zoomlevel-=Math.round(Math.log(accuracy/50)/Math.LN2);
+
+
+                }
+                url+="&zoom="+zoomlevel;
+                image.src=url;
+            }
+
+
+        }
+        document.getElementById("btn").onclick=function(){
+            var img=getMap();
+            document.body.appendChild(img);
+        }
+    </script>
+
+</body>
+</html>

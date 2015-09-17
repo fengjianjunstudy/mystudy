@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+		function toArray(likeArr,n){
+			return  [].slice.call(likeArr,n);
+		}
+		var oDiv=document.getElementsByTagName("div");
+		var divArr=toArray(oDiv,2);
+		console.log({}.toString.call(divArr))
+		console.log(divArr.length)
+	</script>
+</body>
+</html>

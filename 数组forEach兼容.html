@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		if(!Array.prototype.forEach){ 
+			Array.prototype.forEach=function(fn){ 
+				for(var i=0;i<this.length;i++){ 
+					fn.call(null,this[i],i);
+				}
+			}
+		}
+		var arr = [2,9,4,5,3,7];
+		var newArr=arr.forEach(function(val,index){
+			
+			arr[index]=val*val;
+		});
+		alert(arr);  // => [4, 81, 16, 25, 9, 49]
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript"> 
+		// function A(){ 
+		// }
+		// function B(){ 
+		// }
+		// var a=new A();
+		// B.prototype=new A();
+		// var b=new B(); 
+		// console.log(b.constructor)
+		// console.log(a instanceof Object)   // => true
+		// console.log(b instanceof Object)   // => true
+		// console.log(a instanceof A)   // => true
+		// console.log(b instanceof B)   // =>false
+		// console.log(b instanceof A)   // =>true
+
+		function A(){ 
+		}
+		var a=new A();
+		A.prototype={};
+		var a1=new A();
+		console.log(a instanceof A);   // =>false
+		console.log(a1 instanceof A);   // =>true
+		console.dir(A.prototype)
+
+	</script>
+</body>
+</html>

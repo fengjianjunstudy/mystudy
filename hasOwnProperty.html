@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var o={x:1};
+	Object.prototype.say=function(){ 
+		console.log(this.x)
+	}
+	console.log("x" in o);
+	console.log("say" in o);
+	console.log(o.hasOwnProperty("x"))
+	console.log(o.hasOwnProperty("say"))
+	console.log(Object.prototype.propertyIsEnumerable("toString"))
+	</script>
+</body>
+</html>

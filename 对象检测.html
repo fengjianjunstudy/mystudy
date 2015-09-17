@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var objArr=["String","Number","Boolean","Undefined","Null","Array","Function","Date"];
+
+		Type=(function(arr){
+			var objType={};
+			for(var i=0;i<arr.length;i++){ 
+				objType["is"+arr[i]]=(function(i){ 
+					return function(val){ 
+						return {}.toString.call(val)==="[object "+arr[i]+"]";
+					}
+				})(i);
+			}
+			return objType;
+		})(objArr);
+
+		//用法如下：
+		// 检测是否是string类型
+		console.log(Type.isString("abc"))
+		// 检测是否是number类型
+		console.log(Type.isNumber(1))
+		//检测是否是布尔类型
+		console.log(Type.isBoolean(true))
+		//检测是否是undefined类型
+		console.log(Type.isUndefined(undefined))
+		console.log(Type.isNull(null))
+		console.log(Type.isArray([]))
+		console.log(Type.isFunction(function(){}))
+		console.log(Type.isDate(new Date()))
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function restrict(o,p){ 
+		if(var pro in p){ 
+			if(pro in o){ 
+				continue;
+			}else{ 
+				delete o[pro];
+			}
+		}
+		return o;
+	}
+	</script>
+</body>
+</html>

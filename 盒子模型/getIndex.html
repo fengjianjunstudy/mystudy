@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript"> 
+		var arr=[1,30,60,90,120,150,180,210,240,270,300,330,360,390,420,450,480,510,540,570,600,630,660,690,720];
+		var n=360;
+		function getIndex(n,arr){ 
+			var index=0;
+			var nLenHalf=parseInt(arr.length/2);
+			if(arr[nLenHalf]<=n && arr[++nLenHalf]>=n){ 
+				index=nLenHalf;
+			}else if(arr[nLenHalf]>n){ 
+				var newArr=arr.slice(0,nLenHalf);
+				getIndex(n,newArr)
+			}else{ 
+				var newArr=arr.slice(nLenHalf);
+				getIndex(n,newArr)
+			}
+			return index;
+		}
+		console.log(getIndex(n,arr));
+	</script>
+</body>
+</html>

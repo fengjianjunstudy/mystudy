@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function consfunc(){ 
+			var func=[];
+			for(var i=0;i<10;i++){ 
+				func[i]=(function(i){ 
+					return function(){ 
+						return i;
+					}
+				})(i)
+			}
+			return func;
+		}
+		var func=consfunc();
+		console.log(func[5]());
+	</script>
+</body>
+</html>

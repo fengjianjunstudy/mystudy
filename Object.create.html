@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function inherit(pro){ 
+		if(!pro){ 
+			throw TypeError();
+		}
+		if(Object.create){ 
+			return Object.create(pro);
+		}
+		if(typeof pro !=="object" && typeof pro!=="function"){ 
+			throw TypeError();
+		}
+		function F(){}
+		F.prototype=pro;
+		return new F();
+	}
+	var o=inherit({a:"aaa",b:function(){ console.log(this.a)}})
+	console.log(o.a);
+	o.b();
+	var o1=inherit(null)
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-mark1:before { content: "\e600"; }
+.icon-mark2:before { content: "\e601"; }
+.icon-correct:before { content: "\e602"; }
+.icon-responsetype:before { content: "\e603"; }
+.icon-picturewall:before { content: "\e604"; }
+.icon-list:before { content: "\e605"; }
+.icon-statistics:before { content: "\e606"; }
+.icon-picture:before { content: "\e607"; }
+.icon-picordinary:before { content: "\e608"; }
+.icon-picfull:before { content: "\e609"; }
+.icon-quote:before { content: "\e60a"; }
+.icon-link:before { content: "\e60b"; }
+.icon-markdelete:before { content: "\e60c"; }
+.icon-pictest:before { content: "\e60d"; }
+.icon-delete:before { content: "\e60e"; }
+.icon-mark:before { content: "\e60f"; }
+.icon-script:before { content: "\e610"; }
+.icon-pic:before { content: "\e611"; }
+.icon-circle:before { content: "\e612"; }
+.icon-add:before { content: "\e613"; }
+.icon-pzpic:before { content: "\e614"; }
+.icon-line:before { content: "\e615"; }
+.icon-pz:before { content: "\e616"; }
+.icon-center:before { content: "\e617"; }
+.icon-i:before { content: "\e618"; }
+.icon-h3:before { content: "\e619"; }
+.icon-h2:before { content: "\e61a"; }
+.icon-H1:before { content: "\e61b"; }
+.icon-code:before { content: "\e61c"; }
+.icon-icon01:before { content: "\e61d"; }
+.icon-eduiconmy:before { content: "\e61e"; }
+.icon-eduiconmy1:before { content: "\e61f"; }
+.icon-eduicongouwuche:before { content: "\e620"; }
+.icon-eduicongouwuche1:before { content: "\e621"; }
+.icon-eduiconkecheng:before { content: "\e622"; }
+.icon-eduiconkecheng1:before { content: "\e623"; }
+.icon-eduiconshouye:before { content: "\e624"; }
+.icon-eduiconshouye1:before { content: "\e625"; }
+.icon-eduicontaocan:before { content: "\e626"; }
+.icon-eduicontaocan1:before { content: "\e627"; }

@@ -1,0 +1,9 @@
+require.config({
+    paths:{
+        "mod1":"mod1",
+        "mod2":"mod2"
+    }
+});
+require(["mod2"],function(mod2){
+    mod2.show();
+});

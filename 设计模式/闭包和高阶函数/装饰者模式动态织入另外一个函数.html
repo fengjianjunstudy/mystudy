@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="insert_before_after.js"></script>
+<script type="text/javascript">
+	function fn1(){ 
+		var sum=0;
+		for(var i=0,arg;arg=arguments[i++];){ 
+			sum+=arg;
+		}
+		console.log(sum)
+	}
+	function fn2(){ 
+		console.log("fn2")
+	}
+	function fn3(){ 
+		console.log("fn3")
+	}
+	fn2.before(fn1)(10,20);
+</script>
+</body>
+</html>

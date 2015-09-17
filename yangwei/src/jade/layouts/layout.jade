@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta( http-equiv="content-type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(name="format-detection" content="telephone=no")
+        meta(name="apple-mobile-web-app-status-bar-style" content="black")
+
+        title CSDN
+        //<link rel="stylesheet" href="css/main.css">
+        //link( rel="stylesheet" href="static/css/font-awesome.min.css" )
+        link( rel="stylesheet" href="static/css/mod_common.css" )
+        link( rel="stylesheet" href="static/css/iconfont.css" )
+        block css
+        script( src="static/js/libs/zepto.js" )
+        script( src="static/js/page_size_init.js" )
+
+    body#body
+
+        block header
+        .main.clearfix
+            block introduction
+            block nav
+            block content
+
+        block footer
+        script(type="text/javascript").
+            initpage();
+            $(window).resize(function(){
+                        initpage();
+                    });
+        block script

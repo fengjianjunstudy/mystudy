@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏-->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏-->
+    <title>CSDN</title>
+    <style type="text/css">
+    *{margin:0; padding: 0;}
+      .video_box{ width: 600px; height: 450px; margin:50px auto; position:relative;}
+      #video{ position: absolute; top: 0; left: 0;}
+    </style>
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  </head>
+  <body>
+    <div class="video_box">
+      <video id="video" width="600" height="450" controls="controls"> 
+        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'  >
+      </video>
+      <img src="src/img.jpg" id="img_btn">
+    </div>
+    <script type="text/javascript">
+      var video=document.querySelector("#video");
+      var imgBtn=document.querySelector("#img_btn");
+      //监控下载速度
+      function getEnd(video){ 
+        var end=0;
+        try{ 
+          end=video.buffered.end(0)||0;
+          end=parseInt(end*1000+1)/1000;
+        }catch(e){ 
+          
+        }
+        return end;
+      }
+      //下载进度
+      function loadProgress(video){ 
+        var end=getEnd(video);
+        var duration=video.duration;
+        if(end<duration){ 
+          console.log(end/duration);
+        }else{ 
+          console.log("100%");
+        }
+      }
+      // imgBtn.onclick=function(){ 
+        
+      //   video.width="600";
+      //   video.height="450";
+      //   video.play();
+      //   var timer=setInterval(function(){ 
+      //     loadProgress(video);
+      //   },20)
+      // }
+      video.addEventListener('loadeddata',function(){
+        
+        // 暂停，但下载还在继续
+        video.play()
+        video.volume=0.5;
+        console.log(video.volume)
+        // 启动定时器检测视频下载进度
+        var timer=setInterval(function(){
+          console.log(video.played.end(0));
+          var end=getEnd(video),
+              duration=video.duration;
+              if(end<duration){
+                return
+              }
+              
+              // 下载完了，开始播放吧
+              video.width="600";
+              video.height="450";
+              //video.play();
+           
+              clearInterval(timer)
+            },1000)
+        })
+
+
+
+      // $video.on('playing',function(){
+      //   // 开始播放是打点
+      //   $video.attr('data-updateTime',+newDate())
+      // })
+       
+      // $video.on('pause',function(){
+      //   // 暂停播放时清除打点
+      //   $video.removeAttr('data-updateTime')
+      // })
+      // $video.on('playing',function(){
+      //   // 开始播放是打点
+      //   $video.attr('data-updateTime',+newDate())
+      // })
+       
+      // $video.on('pause',function(){
+      //   // 暂停播放时清除打点
+      //   $video.removeAttr('data-updateTime')
+      // })
+      // // 累加播放时间
+      // $video.on('timeupdate',function(event){
+      //   var $video=$(event.target),
+      //       updateTime=parseInt($video.attr('data-updateTime')||0),
+      //       playingTime=parseInt($video.attr('data-playingTime')||0),
+      //       times=parseInt($video.attr('data-times')||0),
+      //       newtimes=0,
+      //       video=$video.get(0),
+      //       duration=parseFloat($video.attr('data-duration')||0),
+      //       now=+newDate()
+       
+      //   // 播放时间
+      //   playingTime=playingTime+now-updateTime
+       
+      //   // 播放次数
+      //   newtimes=Math.ceil(playingTime/1000/duration)
+       
+      //   $video.attr('data-playingTime',playingTime)
+      //   $video.attr('data-updateTime',now)
+      // })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		if(!Array.prototype.map){ 
+			Array.prototype.map=function(fn){
+				var self=this;
+				var newArr=[];
+				for(var i=0;i<self.length;i++){ 
+					var val=fn.call(null,self[i]);
+					newArr.push(val);
+				} 
+				return newArr;
+			}
+		}
+		var arr = [2,9,4,5,3,7];
+		var newArr=arr.map(function(val){ 
+			return val*val;
+		});
+		alert("arr ["+arr+"]");  //  => arr [2,9,4,5,3,7]
+		alert("newArr ["+newArr+"]")  //  => newArr [4,81,16,25,9,49]
+		
+	</script>
+</body>
+</html>

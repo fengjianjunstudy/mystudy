@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  
+<link rel="icon" type="image/ico" href="image/favicon.ico" />
+<link rel="shortcut icon" type="image/ico" href="image/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.slide_con2{width:700px;height:292px; margin:30px auto; position:relative; overflow:hidden;}
+.slide_con{width:960px;height:400px; margin:0px auto; position:relative; overflow:hidden;}
+.pictures{width:2880px; height:400px; position:absolute;margin: 0px; padding: 0px; list-style: none;}
+.pictures li{width:960px; height:400px; float:left;}
+.pictures2{height:292px; position:absolute;margin: 0px; padding: 0px; list-style: none;}
+.pictures2 li{width:700px; height:292px; float:left;}
+</style>
+
+<title>幻灯片、焦点图组件</title>
+
+<script src="js/blur_slideshow.js"></script>
+<script type="text/javascript">
+Blur_reset(function()
+{
+	BCSlideshow('slide_con');
+	BCSlideshow('slide_con2');
+});
+</script>
+
+</head>
+<body>
+	
+<div class="slide_con" id="slide_con">    
+    <ul class="pictures">
+        <li><img src="images/banner.jpg" width="960" height="400" /></li>
+        <li><img src="images/banner.jpg" width="960" height="400" /></li>
+        <li><img src="images/banner.jpg" width="960" height="400" /></li>
+        <li><img src="images/banner.jpg" width="960" height="400" /></li>
+        <li><img src="images/banner.jpg" width="960" height="400" /></li>
+    </ul>
+</div>
+
+<div class="slide_con2" id="slide_con2">    
+    <ul class="pictures2">
+        <li><img src="images/banner2.jpg" width="700" height="292" /></li>
+        <li><img src="images/banner2.jpg" width="700" height="292" /></li>
+    </ul>
+</div>
+    
+</body>
+</html>

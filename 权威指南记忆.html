@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function memorize(f){ 
+			var cache={};  //缓冲已经计算过的结果
+			return function(){ 
+				var key=arguments.length+Array.prototype.join.call(arguments,"_");
+				if(key in cache){ 
+					return cache[key]  //除第一次执行 再有相同的操作是直接返回值，在多次做重复的操作中可以提升执行速度
+				}else{ 
+					return cache[key]=f.apply(this,arguments);  //第一次执行 console.log(gcsmemo(85,187))
+				}
+
+			}
+		}
+
+		function gcd(a,b){ 
+			var t;
+			if(a<b){ 
+				t=a;
+				a=b;
+				b=t;
+			}
+			while(b!=0){
+				t=b;
+				b=a%b;
+				a=t; 
+			}
+			return a;
+		}
+		var gcsmemo=memorize(gcd);
+		console.log(gcsmemo(85,187))
+		console.log(gcsmemo(85,187))
+	</script>
+</body>
+</html>

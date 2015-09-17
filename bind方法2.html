@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	if(!Function.prototype.bind){ 
+		Function.prototype.bind=function(){ 
+			var self=this,arg=arguments;
+			return function(){ 
+				 var args=[].slice.call(arg,1);
+				 args.concat([].slice.call(arguments))
+				 return self.apply(arg[0],args);
+			}
+		}
+	}
+	function fn1(x,y,z){ 
+		var z=z||0;
+		alert(this.age+x+y+z);
+	}
+	var obj={ 
+		age:18
+	}
+	var fn=fn1.bind(obj,2,8);
+	fn(8);
+	</script>
+</body>
+</html>

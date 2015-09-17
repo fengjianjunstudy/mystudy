@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var data=[{"d":"ddd"},{"a":"aaa"},{"e":"eee"},{"c":"cccc"}];
+		function jsonSort(arr){ 
+			arr.sort(function(a,b){ 
+				var aK,bK;
+				for(var aKey in a){ 
+					ak=aKey;
+				}
+				for(var bKey in b){ 
+					bk=bKey;
+				}
+				return ak>bk;
+			});
+
+		}
+		jsonSort(data);
+		console.log(data);
+	</script>
+</body>
+</html>

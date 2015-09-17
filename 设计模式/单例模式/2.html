@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"></meta>
+</head>
+<body>
+	<script type="text/javascript">
+		var Single=function(name){
+			this.name=name;
+			
+		};
+		Single.prototype.getName=function(){ 
+			console.log(this.name);
+		}
+		Single.getInstance=function(){ 
+			var instance=null;
+			return function(name){ 
+				if(!instance){ 
+					instance=new Single(name);
+				}
+				return instance;
+			}
+		}();
+		var a=Single.getInstance("lili");
+		var b=Single.getInstance("xiaoming");
+		console.log(a===b)
+	</script>
+</body>
+</html>

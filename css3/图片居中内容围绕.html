@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin:0; padding: 0}
+	.container{width: 600px; margin:50px auto; position:relative; font-size: 14px;line-height: 20px; overflow: hidden;}
+	.left,.right{ width: 50%; float: left;}
+	.left:before,.right:before{display: block;width: 90px; height: 180px; content: "";}
+	.left:before{ float: right; margin: 10px 0 10px 10px;}
+	.right:before{ float: left;margin: 10px 10px 10px 0;}
+	.container img{ position: absolute; left: 50%; margin-left: -90px; top: 0;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="http://img0.bdstatic.com/img/image/beihaidao180180.jpg">
+		<div class="left">Otherwise include/exclude attributes, settings, sources, and tracks exactly as you would for HTML5 video.*By default, the big play button is located in the upper left hand corner so it doesn't cover up the interesting parts of the poster. If you'd prefer to center the big play button, you can add an additional vjs-big-play-centered class to your video element. For example:Alternative Setup for Dynamically Loaded HTMLIf your web page or application loads the video tag dynamically (ajax, appendChild, etc.), so that it may not exist when the page loads, you'll want to manually set up the player instead of relying on the data-setup attribute. To do this, first remove the data-setup attribute from the tag so there's no confusion around when the player is initialized. Next, run the following javascript some time after the Video.js javascript library has loaded, and after the video tag has been loaded into the DOM.videojs("example_video_1", {}, function(){  // Player (this) is initialized and ready.});The first argument in the videojs </div>
+		<div class="right">function is the ID of your video tag. Replace it with your own.The second argument is an options object. It allows you to set additional options like you can with the data-setup attribute.The third argument is a 'ready' callback. Once Video.js has initialized it will call this function.Instead of using an element ID, you can also pass a reference to the element itself.videojs(document.getElementById('example_video_1'), {}, function() {// This is functionally the same as the previous example.});videojs(document.getElementsByClassName('awesome_video_class')[0], {}, function() {  // You can grab an element by class if you'd like, just make sure  // if it's an array that you pick one (here we chose the first).});* If you have trouble playing back content you know is in the correct format, your HTTP server might not be delivering the content with the correct MIME type. Please double check your content's headers before opening an issue.</div>
+	</div>
+</body>
+</html>
